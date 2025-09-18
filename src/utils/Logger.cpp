@@ -20,7 +20,7 @@ std::shared_ptr<spdlog::logger> get_logger() {
 
 void init_logger() {
     std::call_once(init_flag, [] {
-        global_logger = spdlog::stdout_color_mt("video-player");
+        global_logger = spdlog::stdout_color_mt("raha");
         global_logger->set_level(spdlog::level::info);
         spdlog::set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%^%l%$] %v");
     });

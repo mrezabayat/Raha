@@ -1,6 +1,6 @@
-# Video Player (C++20)
+# Raha (C++20 Video Player)
 
-A modular, cross-platform video player prototype written in C++20. The application integrates FFmpeg for demuxing/decoding, SDL2 for audio and windowing, libplacebo for future GPU video rendering, libass for subtitles, and SQLite for media library persistence. The project is scaffolded with CMake and Conan for dependency management.
+A modular, cross-platform media player named **Raha**, written in C++20. Raha integrates FFmpeg for demuxing/decoding, SDL2 for audio/video output, and SQLite for media library persistence. The project is scaffolded with CMake and Conan for dependency management.
 
 ## Feature Highlights
 
@@ -66,7 +66,7 @@ The Conan-generated preset selects Ninja/Unix Makefiles automatically for your p
 ## Running
 
 ```bash
-./build/video_player <path-to-media-file>
+./build/raha <path-to-media-file>
 ```
 
 Keyboard shortcuts:

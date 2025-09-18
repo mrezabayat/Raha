@@ -3,8 +3,8 @@ from conan.tools.cmake import CMake, CMakeDeps, CMakeToolchain
 from conan.tools.files import copy
 import os
 
-class VideoPlayerRecipe(ConanFile):
-    name = "video-player"
+class RahaRecipe(ConanFile):
+    name = "raha"
     version = "0.1.0"
     package_type = "application"
     settings = "os", "compiler", "build_type", "arch"
@@ -39,7 +39,7 @@ class VideoPlayerRecipe(ConanFile):
 
     def generate(self):
         tc = CMakeToolchain(self)
-        tc.variables["VPLAYER_ENABLE_TESTS"] = True
+        tc.variables["RAHA_ENABLE_TESTS"] = True
         tc.generate()
         deps = CMakeDeps(self)
         deps.generate()

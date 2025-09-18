@@ -201,7 +201,7 @@ void App::render_ui() {
     int total_min = static_cast<int>(total / 60.0);
     int total_sec = static_cast<int>(std::fmod(total, 60.0));
 
-    std::string title = "Video Player";
+    std::string title = "Raha";
     switch (player_.state()) {
     case vplayer::core::PlayerState::Playing:
         title += " - Playing";

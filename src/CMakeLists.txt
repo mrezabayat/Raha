@@ -4,7 +4,7 @@ find_package(SQLite3 REQUIRED)
 find_package(spdlog REQUIRED)
 find_package(nlohmann_json REQUIRED)
 
-add_library(vplayer_core
+add_library(raha_core
     core/ApplicationConfig.cpp
     core/Clock.cpp
     core/MediaPlayer.cpp
@@ -24,13 +24,13 @@ add_library(vplayer_core
     utils/Logger.cpp
 )
 
-target_include_directories(vplayer_core
+target_include_directories(raha_core
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/..
         ${CMAKE_CURRENT_SOURCE_DIR}/../include
 )
 
-target_link_libraries(vplayer_core
+target_link_libraries(raha_core
     PUBLIC
         ffmpeg::avcodec
         ffmpeg::avformat
@@ -43,18 +43,18 @@ target_link_libraries(vplayer_core
         nlohmann_json::nlohmann_json
 )
 
-target_compile_features(vplayer_core PUBLIC cxx_std_20)
+target_compile_features(raha_core PUBLIC cxx_std_20)
 
-add_executable(video_player
+add_executable(raha
     main.cpp
     frontend/App.cpp
     frontend/ImGuiLayer.cpp
     platform/PlatformAbstraction.cpp
 )
 
-target_link_libraries(video_player
+target_link_libraries(raha
     PRIVATE
-        vplayer_core
+        raha_core
 )
 
-install(TARGETS video_player RUNTIME DESTINATION bin)
+install(TARGETS raha RUNTIME DESTINATION bin)

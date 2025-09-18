@@ -51,7 +51,7 @@ struct ApplicationConfig {
 
     std::optional<std::filesystem::path> last_media_path;
     std::optional<double> last_position_seconds;
-    std::filesystem::path database_path {"video-player.db"};
+    std::filesystem::path database_path {"raha.db"};
 
     static ApplicationConfig load(const std::filesystem::path& path);
     void save(const std::filesystem::path& path) const;
