@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-namespace vplayer::core {
+namespace raha::core {
 
 struct PlaylistEntry {
     std::string uri;
@@ -31,4 +31,4 @@ private:
     std::optional<std::size_t> current_index_;
 };
 
-} // namespace vplayer::core
+} // namespace raha::core

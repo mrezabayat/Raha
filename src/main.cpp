@@ -1,15 +1,15 @@
-#include "vplayer/frontend/App.hpp"
-#include "vplayer/platform/PlatformAbstraction.hpp"
-#include "vplayer/utils/Logger.hpp"
+#include "raha/frontend/App.hpp"
+#include "raha/platform/PlatformAbstraction.hpp"
+#include "raha/utils/Logger.hpp"
 
 #include <exception>
 #include <iostream>
 
 int main(int argc, char** argv) {
     try {
-        vplayer::utils::init_logger();
-        vplayer::frontend::App app;
-        if (!app.initialize(1280, 720, vplayer::platform::default_window_title())) {
+        raha::utils::init_logger();
+        raha::frontend::App app;
+        if (!app.initialize(1280, 720, raha::platform::default_window_title())) {
             std::cerr << "Failed to initialize application" << std::endl;
             return 1;
         }

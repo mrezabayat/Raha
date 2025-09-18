@@ -1,6 +1,6 @@
-#include "vplayer/core/MediaSource.hpp"
+#include "raha/core/MediaSource.hpp"
 
-#include "vplayer/utils/Logger.hpp"
+#include "raha/utils/Logger.hpp"
 
 extern "C" {
 #include <libavutil/avutil.h>
@@ -8,7 +8,7 @@ extern "C" {
 
 #include <stdexcept>
 
-namespace vplayer::core {
+namespace raha::core {
 
 MediaSource::MediaSource() = default;
 
@@ -100,4 +100,4 @@ void MediaSource::discover_streams() {
     }
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

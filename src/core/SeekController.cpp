@@ -1,4 +1,4 @@
-#include "vplayer/core/SeekController.hpp"
+#include "raha/core/SeekController.hpp"
 
 extern "C" {
 #include <libavutil/avutil.h>
@@ -6,7 +6,7 @@ extern "C" {
 
 #include <algorithm>
 
-namespace vplayer::core {
+namespace raha::core {
 
 SeekController::SeekController(MediaPlayer& player) : player_(player) {}
 
@@ -34,4 +34,4 @@ bool SeekController::frame_step(int direction) {
     return seek_relative(direction * frame_duration);
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

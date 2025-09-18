@@ -1,8 +1,8 @@
-#include "vplayer/utils/ThreadPool.hpp"
+#include "raha/utils/ThreadPool.hpp"
 
 #include <chrono>
 
-namespace vplayer::utils {
+namespace raha::utils {
 
 ThreadPool::ThreadPool(std::size_t thread_count) {
     if (thread_count == 0) {
@@ -44,4 +44,4 @@ void ThreadPool::worker_loop() {
     }
 }
 
-} // namespace vplayer::utils
+} // namespace raha::utils

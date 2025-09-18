@@ -5,7 +5,7 @@
 #include <mutex>
 #include <queue>
 
-namespace vplayer::utils {
+namespace raha::utils {
 
 class TaskQueue {
 public:
@@ -25,4 +25,4 @@ private:
     bool stop_ {false};
 };
 
-} // namespace vplayer::utils
+} // namespace raha::utils

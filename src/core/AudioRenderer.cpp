@@ -1,6 +1,6 @@
-#include "vplayer/core/AudioRenderer.hpp"
+#include "raha/core/AudioRenderer.hpp"
 
-#include "vplayer/utils/Logger.hpp"
+#include "raha/utils/Logger.hpp"
 
 extern "C" {
 #include <libavutil/channel_layout.h>
@@ -11,7 +11,7 @@ extern "C" {
 #include <stdexcept>
 #include <vector>
 
-namespace vplayer::core {
+namespace raha::core {
 
 AudioRenderer::AudioRenderer() = default;
 AudioRenderer::~AudioRenderer() { shutdown(); }
@@ -117,4 +117,4 @@ SwrContextPtr AudioRenderer::make_resampler(AVCodecContext* audio_ctx) {
     return SwrContextPtr(ctx);
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

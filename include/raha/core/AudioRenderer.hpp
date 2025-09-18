@@ -1,6 +1,6 @@
 #pragma once
 
-#include "vplayer/core/DecoderBridge.hpp"
+#include "raha/core/DecoderBridge.hpp"
 
 extern "C" {
 #include <libswresample/swresample.h>
@@ -10,7 +10,7 @@ extern "C" {
 #include <atomic>
 #include <memory>
 
-namespace vplayer::core {
+namespace raha::core {
 
 struct SwrContextDeleter {
     void operator()(SwrContext* ctx) const {
@@ -50,4 +50,4 @@ private:
     std::atomic<bool> muted_ {false};
 };
 
-} // namespace vplayer::core
+} // namespace raha::core

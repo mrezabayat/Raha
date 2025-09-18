@@ -1,6 +1,6 @@
-#include "vplayer/core/DecoderBridge.hpp"
+#include "raha/core/DecoderBridge.hpp"
 
-#include "vplayer/utils/Logger.hpp"
+#include "raha/utils/Logger.hpp"
 
 extern "C" {
 #include <libavutil/avutil.h>
@@ -9,7 +9,7 @@ extern "C" {
 
 #include <stdexcept>
 
-namespace vplayer::core {
+namespace raha::core {
 
 namespace {
 FramePtr make_frame() {
@@ -195,4 +195,4 @@ CodecContextPtr DecoderBridge::create_context(MediaSource& source, AVMediaType t
     return ctx;
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

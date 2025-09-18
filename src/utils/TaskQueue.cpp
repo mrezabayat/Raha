@@ -1,6 +1,6 @@
-#include "vplayer/utils/TaskQueue.hpp"
+#include "raha/utils/TaskQueue.hpp"
 
-namespace vplayer::utils {
+namespace raha::utils {
 
 void TaskQueue::push(Task task) {
     {
@@ -52,4 +52,4 @@ bool TaskQueue::empty() const {
     return queue_.empty();
 }
 
-} // namespace vplayer::utils
+} // namespace raha::utils

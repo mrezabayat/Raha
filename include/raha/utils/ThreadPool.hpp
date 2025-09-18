@@ -1,6 +1,6 @@
 #pragma once
 
-#include "vplayer/utils/TaskQueue.hpp"
+#include "raha/utils/TaskQueue.hpp"
 
 #include <atomic>
 #include <functional>
@@ -10,7 +10,7 @@
 #include <utility>
 #include <vector>
 
-namespace vplayer::utils {
+namespace raha::utils {
 
 class ThreadPool {
 public:
@@ -55,4 +55,4 @@ private:
     std::atomic<bool> running_ {true};
 };
 
-} // namespace vplayer::utils
+} // namespace raha::utils

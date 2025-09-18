@@ -1,4 +1,4 @@
-#include "vplayer/core/Clock.hpp"
+#include "raha/core/Clock.hpp"
 
 #include <gtest/gtest.h>
 
@@ -6,7 +6,7 @@
 #include <thread>
 
 TEST(ClockTests, AdvancesWhenRunning) {
-    vplayer::core::Clock clock;
+    raha::core::Clock clock;
     clock.start();
     std::this_thread::sleep_for(std::chrono::milliseconds(50));
     double elapsed = clock.current_time();
@@ -14,7 +14,7 @@ TEST(ClockTests, AdvancesWhenRunning) {
 }
 
 TEST(ClockTests, PausesAndResumes) {
-    vplayer::core::Clock clock;
+    raha::core::Clock clock;
     clock.start();
     std::this_thread::sleep_for(std::chrono::milliseconds(20));
     clock.pause();

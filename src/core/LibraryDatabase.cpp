@@ -1,12 +1,12 @@
-#include "vplayer/core/LibraryDatabase.hpp"
+#include "raha/core/LibraryDatabase.hpp"
 
-#include "vplayer/utils/Logger.hpp"
+#include "raha/utils/Logger.hpp"
 
 #include <sqlite3.h>
 
 #include <stdexcept>
 
-namespace vplayer::core {
+namespace raha::core {
 
 LibraryDatabase::LibraryDatabase() = default;
 LibraryDatabase::~LibraryDatabase() { close(); }
@@ -113,4 +113,4 @@ std::vector<MediaEntry> LibraryDatabase::search(const std::string& query) const 
     return results;
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

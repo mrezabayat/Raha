@@ -1,8 +1,8 @@
-#include "vplayer/platform/PlatformAbstraction.hpp"
+#include "raha/platform/PlatformAbstraction.hpp"
 
 #include <cstdlib>
 
-namespace vplayer::platform {
+namespace raha::platform {
 
 std::filesystem::path user_config_directory() {
 #if defined(_WIN32)
@@ -30,4 +30,4 @@ std::string default_window_title() {
     return "Raha";
 }
 
-} // namespace vplayer::platform
+} // namespace raha::platform

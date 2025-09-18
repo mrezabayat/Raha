@@ -1,10 +1,10 @@
-#include "vplayer/core/ApplicationConfig.hpp"
+#include "raha/core/ApplicationConfig.hpp"
 
 #include <nlohmann/json.hpp>
 #include <fstream>
 #include <stdexcept>
 
-namespace vplayer::core {
+namespace raha::core {
 namespace {
 using json = nlohmann::json;
 
@@ -116,4 +116,4 @@ void ApplicationConfig::save(const std::filesystem::path& path) const {
     output << to_json(*this).dump(2);
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

@@ -1,8 +1,8 @@
-#include "vplayer/core/PlaybackController.hpp"
+#include "raha/core/PlaybackController.hpp"
 
 #include <algorithm>
 
-namespace vplayer::core {
+namespace raha::core {
 
 PlaybackController::PlaybackController(MediaPlayer& player) : player_(player) {}
 
@@ -32,4 +32,4 @@ void PlaybackController::normal_speed() {
     player_.set_playback_speed(1.0);
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

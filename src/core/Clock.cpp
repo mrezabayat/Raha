@@ -1,6 +1,6 @@
-#include "vplayer/core/Clock.hpp"
+#include "raha/core/Clock.hpp"
 
-namespace vplayer::core {
+namespace raha::core {
 
 void Clock::start(double start_seconds) {
     base_time_seconds_ = start_seconds;
@@ -50,4 +50,4 @@ double Clock::current_time() const {
     return base_time_seconds_ + seconds * speed_.load();
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

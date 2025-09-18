@@ -1,7 +1,7 @@
-#include "vplayer/core/VideoRenderer.hpp"
+#include "raha/core/VideoRenderer.hpp"
 
-#include "vplayer/core/ScreenshotExporter.hpp"
-#include "vplayer/utils/Logger.hpp"
+#include "raha/core/ScreenshotExporter.hpp"
+#include "raha/utils/Logger.hpp"
 
 extern "C" {
 #include <libavutil/imgutils.h>
@@ -12,7 +12,7 @@ extern "C" {
 #include <stdexcept>
 #include <string>
 
-namespace vplayer::core {
+namespace raha::core {
 
 VideoRenderer::VideoRenderer() = default;
 VideoRenderer::~VideoRenderer() { shutdown(); }
@@ -171,4 +171,4 @@ void VideoRenderer::ensure_texture(int width, int height, AVPixelFormat format) 
     }
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

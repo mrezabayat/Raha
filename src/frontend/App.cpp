@@ -1,7 +1,7 @@
-#include "vplayer/frontend/App.hpp"
+#include "raha/frontend/App.hpp"
 
-#include "vplayer/platform/PlatformAbstraction.hpp"
-#include "vplayer/utils/Logger.hpp"
+#include "raha/platform/PlatformAbstraction.hpp"
+#include "raha/utils/Logger.hpp"
 
 #include <SDL.h>
 
@@ -16,23 +16,23 @@ extern "C" {
 #include <filesystem>
 #include <thread>
 
-namespace vplayer::frontend {
+namespace raha::frontend {
 
 namespace {
 std::filesystem::path config_path() {
-    auto dir = vplayer::platform::user_config_directory();
+    auto dir = raha::platform::user_config_directory();
     std::filesystem::create_directories(dir);
     return dir / "config.json";
 }
 
 } // namespace
 
-App::App() : playback_controller_(std::make_unique<vplayer::core::PlaybackController>(player_)),
-             seek_controller_(std::make_unique<vplayer::core::SeekController>(player_)) {
+App::App() : playback_controller_(std::make_unique<raha::core::PlaybackController>(player_)),
+             seek_controller_(std::make_unique<raha::core::SeekController>(player_)) {
     try {
-        config_ = vplayer::core::ApplicationConfig::load(config_path());
+        config_ = raha::core::ApplicationConfig::load(config_path());
     } catch (const std::exception& e) {
-        vplayer::utils::get_logger()->warn("Config load failed: {}", e.what());
+        raha::utils::get_logger()->warn("Config load failed: {}", e.what());
     }
     player_.set_config(config_);
 }
@@ -43,20 +43,20 @@ App::~App() {
 
 bool App::initialize(int width, int height, const std::string& title) {
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_EVENTS) < 0) {
-        vplayer::utils::get_logger()->error("SDL_Init failed: {}", SDL_GetError());
+        raha::utils::get_logger()->error("SDL_Init failed: {}", SDL_GetError());
         return false;
     }
     sdl_initialized_ = true;
 
     window_ = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
     if (!window_) {
-        vplayer::utils::get_logger()->error("Failed to create window: {}", SDL_GetError());
+        raha::utils::get_logger()->error("Failed to create window: {}", SDL_GetError());
         return false;
     }
 
     renderer_ = SDL_CreateRenderer(window_, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if (!renderer_) {
-        vplayer::utils::get_logger()->warn("Falling back to software renderer: {}", SDL_GetError());
+        raha::utils::get_logger()->warn("Falling back to software renderer: {}", SDL_GetError());
         renderer_ = SDL_CreateRenderer(window_, -1, SDL_RENDERER_SOFTWARE);
     }
 
@@ -69,7 +69,7 @@ bool App::initialize(int width, int height, const std::string& title) {
     }
 
     if (!library_db_.open(config_.database_path)) {
-        vplayer::utils::get_logger()->warn("Failed to open media library database");
+        raha::utils::get_logger()->warn("Failed to open media library database");
     }
 
     running_ = true;
@@ -122,7 +122,7 @@ bool App::open_media(const std::string& uri) {
     }
     player_.play();
 
-    vplayer::core::MediaEntry entry;
+    raha::core::MediaEntry entry;
     entry.path = uri;
     entry.title = std::filesystem::path(uri).stem().string();
     entry.duration_seconds = player_.duration();
@@ -135,7 +135,7 @@ bool App::open_media(const std::string& uri) {
     try {
         library_db_.upsert_entry(entry);
     } catch (const std::exception& e) {
-        vplayer::utils::get_logger()->warn("Failed to persist media entry: {}", e.what());
+        raha::utils::get_logger()->warn("Failed to persist media entry: {}", e.what());
     }
     playlist_.add({uri, entry.title, entry.duration_seconds});
     return true;
@@ -203,13 +203,13 @@ void App::render_ui() {
 
     std::string title = "Raha";
     switch (player_.state()) {
-    case vplayer::core::PlayerState::Playing:
+    case raha::core::PlayerState::Playing:
         title += " - Playing";
         break;
-    case vplayer::core::PlayerState::Paused:
+    case raha::core::PlayerState::Paused:
         title += " - Paused";
         break;
-    case vplayer::core::PlayerState::Stopped:
+    case raha::core::PlayerState::Stopped:
         title += " - Stopped";
         break;
     default:
@@ -227,8 +227,8 @@ void App::persist_state() {
         config_ = player_.config();
         config_.save(config_path());
     } catch (const std::exception& e) {
-        vplayer::utils::get_logger()->error("Failed to persist config: {}", e.what());
+        raha::utils::get_logger()->error("Failed to persist config: {}", e.what());
     }
 }
 
-} // namespace vplayer::frontend
+} // namespace raha::frontend

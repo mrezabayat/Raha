@@ -7,7 +7,7 @@
 
 struct sqlite3;
 
-namespace vplayer::core {
+namespace raha::core {
 
 struct MediaEntry {
     int64_t id {0};
@@ -34,4 +34,4 @@ private:
     sqlite3* db_ {nullptr};
 };
 
-} // namespace vplayer::core
+} // namespace raha::core

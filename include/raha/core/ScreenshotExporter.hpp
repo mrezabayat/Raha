@@ -6,11 +6,11 @@ extern "C" {
 #include <libavutil/frame.h>
 }
 
-namespace vplayer::core {
+namespace raha::core {
 
 class ScreenshotExporter {
 public:
     bool export_frame(const AVFrame* frame, const std::filesystem::path& path) const;
 };
 
-} // namespace vplayer::core
+} // namespace raha::core

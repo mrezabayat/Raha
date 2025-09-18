@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-namespace vplayer::core {
+namespace raha::core {
 
 struct PlaybackSettings {
     double playback_speed {1.0};
@@ -57,4 +57,4 @@ struct ApplicationConfig {
     void save(const std::filesystem::path& path) const;
 };
 
-} // namespace vplayer::core
+} // namespace raha::core

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "vplayer/core/FrameQueue.hpp"
-#include "vplayer/core/MediaSource.hpp"
+#include "raha/core/FrameQueue.hpp"
+#include "raha/core/MediaSource.hpp"
 
 extern "C" {
 #include <libavcodec/avcodec.h>
@@ -11,7 +11,7 @@ extern "C" {
 #include <optional>
 #include <queue>
 
-namespace vplayer::core {
+namespace raha::core {
 
 struct CodecContextDeleter {
     void operator()(AVCodecContext* ctx) const {
@@ -61,4 +61,4 @@ private:
     bool eof_ {false};
 };
 
-} // namespace vplayer::core
+} // namespace raha::core

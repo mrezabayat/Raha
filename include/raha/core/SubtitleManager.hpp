@@ -1,12 +1,12 @@
 #pragma once
 
-#include "vplayer/core/ApplicationConfig.hpp"
+#include "raha/core/ApplicationConfig.hpp"
 
 #include <filesystem>
 #include <optional>
 #include <string>
 
-namespace vplayer::core {
+namespace raha::core {
 
 class SubtitleManager {
 public:
@@ -25,4 +25,4 @@ private:
     std::optional<std::filesystem::path> current_track_;
 };
 
-} // namespace vplayer::core
+} // namespace raha::core

@@ -1,6 +1,6 @@
-#include "vplayer/core/ScreenshotExporter.hpp"
+#include "raha/core/ScreenshotExporter.hpp"
 
-#include "vplayer/utils/Logger.hpp"
+#include "raha/utils/Logger.hpp"
 
 extern "C" {
 #include <libswscale/swscale.h>
@@ -8,7 +8,7 @@ extern "C" {
 
 #include <fstream>
 
-namespace vplayer::core {
+namespace raha::core {
 
 bool ScreenshotExporter::export_frame(const AVFrame* frame, const std::filesystem::path& path) const {
     if (!frame) {
@@ -59,4 +59,4 @@ bool ScreenshotExporter::export_frame(const AVFrame* frame, const std::filesyste
     return true;
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

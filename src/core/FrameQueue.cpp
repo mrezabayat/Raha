@@ -1,8 +1,8 @@
-#include "vplayer/core/FrameQueue.hpp"
+#include "raha/core/FrameQueue.hpp"
 
 #include <stdexcept>
 
-namespace vplayer::core {
+namespace raha::core {
 
 FrameQueue::FrameQueue(std::size_t capacity) : capacity_(capacity) {
     if (capacity_ == 0) {
@@ -50,4 +50,4 @@ void FrameQueue::stop() {
     cv_.notify_all();
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

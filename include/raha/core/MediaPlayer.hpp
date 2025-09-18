@@ -1,14 +1,14 @@
 #pragma once
 
-#include "vplayer/core/ApplicationConfig.hpp"
-#include "vplayer/core/AudioRenderer.hpp"
-#include "vplayer/core/Clock.hpp"
-#include "vplayer/core/DecoderBridge.hpp"
-#include "vplayer/core/FrameQueue.hpp"
-#include "vplayer/core/MediaSource.hpp"
-#include "vplayer/core/SubtitleManager.hpp"
-#include "vplayer/core/VideoRenderer.hpp"
-#include "vplayer/utils/ThreadPool.hpp"
+#include "raha/core/ApplicationConfig.hpp"
+#include "raha/core/AudioRenderer.hpp"
+#include "raha/core/Clock.hpp"
+#include "raha/core/DecoderBridge.hpp"
+#include "raha/core/FrameQueue.hpp"
+#include "raha/core/MediaSource.hpp"
+#include "raha/core/SubtitleManager.hpp"
+#include "raha/core/VideoRenderer.hpp"
+#include "raha/utils/ThreadPool.hpp"
 
 #include <SDL.h>
 #include <atomic>
@@ -17,7 +17,7 @@
 #include <optional>
 #include <string>
 
-namespace vplayer::core {
+namespace raha::core {
 
 enum class PlayerState {
     Idle,
@@ -83,4 +83,4 @@ private:
     const double video_sync_tolerance_ {0.02};
 };
 
-} // namespace vplayer::core
+} // namespace raha::core

@@ -1,6 +1,6 @@
-#include "vplayer/core/MediaPlayer.hpp"
+#include "raha/core/MediaPlayer.hpp"
 
-#include "vplayer/utils/Logger.hpp"
+#include "raha/utils/Logger.hpp"
 
 extern "C" {
 #include <libavutil/avutil.h>
@@ -11,7 +11,7 @@ extern "C" {
 #include <optional>
 #include <stdexcept>
 
-namespace vplayer::core {
+namespace raha::core {
 
 namespace {
 SDL_Window* validate_window(SDL_Window* window) {
@@ -249,4 +249,4 @@ void MediaPlayer::request_screenshot(const std::filesystem::path& path) {
     video_renderer_.request_screenshot(path);
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

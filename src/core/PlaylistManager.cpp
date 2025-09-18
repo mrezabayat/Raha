@@ -1,9 +1,9 @@
-#include "vplayer/core/PlaylistManager.hpp"
+#include "raha/core/PlaylistManager.hpp"
 
 #include <algorithm>
 #include <random>
 
-namespace vplayer::core {
+namespace raha::core {
 
 void PlaylistManager::add(PlaylistEntry entry) {
     entries_.push_back(std::move(entry));
@@ -86,4 +86,4 @@ std::optional<PlaylistEntry> PlaylistManager::previous(bool loop) {
     return entries_[*current_index_];
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

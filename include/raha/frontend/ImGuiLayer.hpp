@@ -1,6 +1,6 @@
 #pragma once
 
-namespace vplayer::frontend {
+namespace raha::frontend {
 
 class ImGuiLayer {
 public:
@@ -10,4 +10,4 @@ public:
     void render() {}
 };
 
-} // namespace vplayer::frontend
+} // namespace raha::frontend

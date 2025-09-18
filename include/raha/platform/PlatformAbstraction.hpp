@@ -3,9 +3,9 @@
 #include <filesystem>
 #include <string>
 
-namespace vplayer::platform {
+namespace raha::platform {
 
 std::filesystem::path user_config_directory();
 std::string default_window_title();
 
-} // namespace vplayer::platform
+} // namespace raha::platform

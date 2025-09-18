@@ -1,10 +1,10 @@
-#include "vplayer/utils/Logger.hpp"
+#include "raha/utils/Logger.hpp"
 
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <spdlog/spdlog.h>
 #include <mutex>
 
-namespace vplayer::utils {
+namespace raha::utils {
 
 namespace {
 std::once_flag init_flag;
@@ -26,4 +26,4 @@ void init_logger() {
     });
 }
 
-} // namespace vplayer::utils
+} // namespace raha::utils

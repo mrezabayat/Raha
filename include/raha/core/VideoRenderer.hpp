@@ -1,6 +1,6 @@
 #pragma once
 
-#include "vplayer/core/ApplicationConfig.hpp"
+#include "raha/core/ApplicationConfig.hpp"
 
 extern "C" {
 #include <libavutil/frame.h>
@@ -13,7 +13,7 @@ struct SwsContext;
 #include <optional>
 #include <vector>
 
-namespace vplayer::core {
+namespace raha::core {
 
 class VideoRenderer {
 public:
@@ -49,4 +49,4 @@ private:
     std::optional<std::filesystem::path> pending_screenshot_;
 };
 
-} // namespace vplayer::core
+} // namespace raha::core

@@ -8,7 +8,7 @@ extern "C" {
 #include <string>
 #include <vector>
 
-namespace vplayer::core {
+namespace raha::core {
 
 struct StreamInfo {
     int index {-1};
@@ -56,4 +56,4 @@ private:
     std::optional<int> subtitle_stream_index_;
 };
 
-} // namespace vplayer::core
+} // namespace raha::core

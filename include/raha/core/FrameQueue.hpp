@@ -10,7 +10,7 @@ extern "C" {
 #include <mutex>
 #include <queue>
 
-namespace vplayer::core {
+namespace raha::core {
 
 struct FrameDeleter {
     void operator()(AVFrame* frame) const {
@@ -37,4 +37,4 @@ private:
     bool stop_ {false};
 };
 
-} // namespace vplayer::core
+} // namespace raha::core

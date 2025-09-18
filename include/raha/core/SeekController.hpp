@@ -1,8 +1,8 @@
 #pragma once
 
-#include "vplayer/core/MediaPlayer.hpp"
+#include "raha/core/MediaPlayer.hpp"
 
-namespace vplayer::core {
+namespace raha::core {
 
 class SeekController {
 public:
@@ -16,4 +16,4 @@ private:
     MediaPlayer& player_;
 };
 
-} // namespace vplayer::core
+} // namespace raha::core

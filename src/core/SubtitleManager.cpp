@@ -1,8 +1,8 @@
-#include "vplayer/core/SubtitleManager.hpp"
+#include "raha/core/SubtitleManager.hpp"
 
-#include "vplayer/utils/Logger.hpp"
+#include "raha/utils/Logger.hpp"
 
-namespace vplayer::core {
+namespace raha::core {
 
 SubtitleManager::SubtitleManager() = default;
 SubtitleManager::~SubtitleManager() = default;
@@ -18,11 +18,11 @@ void SubtitleManager::shutdown() {
 
 bool SubtitleManager::load_from_file(const std::filesystem::path& path) {
     if (!std::filesystem::exists(path)) {
-        vplayer::utils::get_logger()->warn("Subtitle file not found: {}", path.string());
+        raha::utils::get_logger()->warn("Subtitle file not found: {}", path.string());
         return false;
     }
     current_track_ = path;
-    vplayer::utils::get_logger()->info("Subtitle track queued: {}", path.string());
+    raha::utils::get_logger()->info("Subtitle track queued: {}", path.string());
     return true;
 }
 
@@ -39,4 +39,4 @@ void SubtitleManager::render(double time_seconds, const SubtitleSettings& settin
     // Future work: integrate libass to render subtitles to video frames.
 }
 
-} // namespace vplayer::core
+} // namespace raha::core

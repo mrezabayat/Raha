@@ -3,7 +3,7 @@
 #include <atomic>
 #include <chrono>
 
-namespace vplayer::core {
+namespace raha::core {
 
 class Clock {
 public:
@@ -26,4 +26,4 @@ private:
     std::atomic<bool> running_ {false};
 };
 
-} // namespace vplayer::core
+} // namespace raha::core
